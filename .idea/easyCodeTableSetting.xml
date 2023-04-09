@@ -10,42 +10,56 @@
               <option name="fullColumn">
                 <list>
                   <ColumnInfoDTO>
-                    <option name="comment" value="商家编号，主键，自增" />
+                    <option name="comment" value="商家编号" />
                     <option name="custom" value="false" />
                     <option name="ext" value="{}" />
                     <option name="name" value="id" />
                     <option name="type" value="java.lang.Integer" />
                   </ColumnInfoDTO>
                   <ColumnInfoDTO>
-                    <option name="comment" value="商家名称，非空" />
+                    <option name="comment" value="商家用户名" />
+                    <option name="custom" value="false" />
+                    <option name="ext" value="{}" />
+                    <option name="name" value="username" />
+                    <option name="type" value="java.lang.String" />
+                  </ColumnInfoDTO>
+                  <ColumnInfoDTO>
+                    <option name="comment" value="商家密码" />
+                    <option name="custom" value="false" />
+                    <option name="ext" value="{}" />
+                    <option name="name" value="password" />
+                    <option name="type" value="java.lang.String" />
+                  </ColumnInfoDTO>
+                  <ColumnInfoDTO>
+                    <option name="comment" value="商家名称" />
                     <option name="custom" value="false" />
                     <option name="ext" value="{}" />
                     <option name="name" value="name" />
                     <option name="type" value="java.lang.String" />
                   </ColumnInfoDTO>
                   <ColumnInfoDTO>
-                    <option name="comment" value="商家地址，非空" />
+                    <option name="comment" value="商家地址" />
                     <option name="custom" value="false" />
                     <option name="ext" value="{}" />
                     <option name="name" value="address" />
                     <option name="type" value="java.lang.String" />
                   </ColumnInfoDTO>
                   <ColumnInfoDTO>
-                    <option name="comment" value="商家电话，非空" />
+                    <option name="comment" value="商家电话" />
                     <option name="custom" value="false" />
                     <option name="ext" value="{}" />
                     <option name="name" value="phone" />
                     <option name="type" value="java.lang.String" />
                   </ColumnInfoDTO>
                   <ColumnInfoDTO>
-                    <option name="comment" value="商家邮箱，可为空" />
+                    <option name="comment" value="商家邮箱" />
                     <option name="custom" value="false" />
                     <option name="ext" value="{}" />
                     <option name="name" value="email" />
                     <option name="type" value="java.lang.String" />
                   </ColumnInfoDTO>
                   <ColumnInfoDTO>
-                    <option name="comment" value="商家备注，可为空" />
+                    <option name="comment" value="商家备注" />
                     <option name="custom" value="false" />
                     <option name="ext" value="{}" />
                     <option name="name" value="remark" />
@@ -69,42 +83,49 @@
               <option name="fullColumn">
                 <list>
                   <ColumnInfoDTO>
+                    <option name="comment" value="库存编号" />
                     <option name="custom" value="false" />
                     <option name="ext" value="{}" />
                     <option name="name" value="id" />
                     <option name="type" value="java.lang.Integer" />
                   </ColumnInfoDTO>
                   <ColumnInfoDTO>
+                    <option name="comment" value="商家编号" />
                     <option name="custom" value="false" />
                     <option name="ext" value="{}" />
                     <option name="name" value="merchantId" />
                     <option name="type" value="java.lang.Integer" />
                   </ColumnInfoDTO>
                   <ColumnInfoDTO>
+                    <option name="comment" value="涂料编号" />
                     <option name="custom" value="false" />
                     <option name="ext" value="{}" />
                     <option name="name" value="paintId" />
                     <option name="type" value="java.lang.Integer" />
                   </ColumnInfoDTO>
                   <ColumnInfoDTO>
+                    <option name="comment" value="当前库存数量" />
                     <option name="custom" value="false" />
                     <option name="ext" value="{}" />
                     <option name="name" value="quantity" />
                     <option name="type" value="java.lang.Integer" />
                   </ColumnInfoDTO>
                   <ColumnInfoDTO>
+                    <option name="comment" value="最近入库时间" />
                     <option name="custom" value="false" />
                     <option name="ext" value="{}" />
                     <option name="name" value="lastInDate" />
                     <option name="type" value="java.util.Date" />
                   </ColumnInfoDTO>
                   <ColumnInfoDTO>
+                    <option name="comment" value="最近出库时间" />
                     <option name="custom" value="false" />
                     <option name="ext" value="{}" />
                     <option name="name" value="lastOutDate" />
                     <option name="type" value="java.util.Date" />
                   </ColumnInfoDTO>
                   <ColumnInfoDTO>
+                    <option name="comment" value="库存备注" />
                     <option name="custom" value="false" />
                     <option name="ext" value="{}" />
                     <option name="name" value="remark" />
@@ -166,49 +187,42 @@
               <option name="fullColumn">
                 <list>
                   <ColumnInfoDTO>
-                    <option name="comment" value="涂料编号，主键，自增长" />
+                    <option name="comment" value="涂料编号" />
                     <option name="custom" value="false" />
                     <option name="ext" value="{}" />
                     <option name="name" value="id" />
                     <option name="type" value="java.lang.Integer" />
                   </ColumnInfoDTO>
                   <ColumnInfoDTO>
-                    <option name="comment" value="涂料名称，非空" />
+                    <option name="comment" value="涂料名称" />
                     <option name="custom" value="false" />
                     <option name="ext" value="{}" />
                     <option name="name" value="name" />
                     <option name="type" value="java.lang.String" />
                   </ColumnInfoDTO>
                   <ColumnInfoDTO>
-                    <option name="comment" value="涂料品牌，非空" />
+                    <option name="comment" value="涂料品牌" />
                     <option name="custom" value="false" />
                     <option name="ext" value="{}" />
                     <option name="name" value="brand" />
                     <option name="type" value="java.lang.String" />
                   </ColumnInfoDTO>
                   <ColumnInfoDTO>
-                    <option name="comment" value="涂料类型，非空" />
+                    <option name="comment" value="涂料类型" />
                     <option name="custom" value="false" />
                     <option name="ext" value="{}" />
                     <option name="name" value="type" />
                     <option name="type" value="java.lang.String" />
                   </ColumnInfoDTO>
                   <ColumnInfoDTO>
-                    <option name="comment" value="涂料计量单位，非空" />
+                    <option name="comment" value="涂料计量单位" />
                     <option name="custom" value="false" />
                     <option name="ext" value="{}" />
                     <option name="name" value="unit" />
                     <option name="type" value="java.lang.String" />
                   </ColumnInfoDTO>
                   <ColumnInfoDTO>
-                    <option name="comment" value="涂料单价，非空" />
-                    <option name="custom" value="false" />
-                    <option name="ext" value="{}" />
-                    <option name="name" value="price" />
-                    <option name="type" value="java.lang.Double" />
-                  </ColumnInfoDTO>
-                  <ColumnInfoDTO>
-                    <option name="comment" value="涂料备注，可为空" />
+                    <option name="comment" value="涂料备注" />
                     <option name="custom" value="false" />
                     <option name="ext" value="{}" />
                     <option name="name" value="remark" />
@@ -222,6 +236,79 @@
               <option name="savePackageName" value="com.pwms" />
               <option name="savePath" value="./pwms/src/main/java/com/pwms" />
               <option name="templateGroupName" value="MybatisPlus" />
+            </TableInfoDTO>
+          </value>
+        </entry>
+        <entry key="pwmsdb.supplier_info">
+          <value>
+            <TableInfoDTO>
+              <option name="comment" value="供应商信息表" />
+              <option name="fullColumn">
+                <list>
+                  <ColumnInfoDTO>
+                    <option name="comment" value="供应商编号" />
+                    <option name="custom" value="false" />
+                    <option name="ext" value="{}" />
+                    <option name="name" value="id" />
+                    <option name="type" value="java.lang.Integer" />
+                  </ColumnInfoDTO>
+                  <ColumnInfoDTO>
+                    <option name="comment" value="供应商名称" />
+                    <option name="custom" value="false" />
+                    <option name="ext" value="{}" />
+                    <option name="name" value="name" />
+                    <option name="type" value="java.lang.String" />
+                  </ColumnInfoDTO>
+                  <ColumnInfoDTO>
+                    <option name="comment" value="供应商地址" />
+                    <option name="custom" value="false" />
+                    <option name="ext" value="{}" />
+                    <option name="name" value="address" />
+                    <option name="type" value="java.lang.String" />
+                  </ColumnInfoDTO>
+                  <ColumnInfoDTO>
+                    <option name="comment" value="供应商电话" />
+                    <option name="custom" value="false" />
+                    <option name="ext" value="{}" />
+                    <option name="name" value="phone" />
+                    <option name="type" value="java.lang.String" />
+                  </ColumnInfoDTO>
+                  <ColumnInfoDTO>
+                    <option name="comment" value="供应商邮箱" />
+                    <option name="custom" value="false" />
+                    <option name="ext" value="{}" />
+                    <option name="name" value="email" />
+                    <option name="type" value="java.lang.String" />
+                  </ColumnInfoDTO>
+                  <ColumnInfoDTO>
+                    <option name="comment" value="供应商联系人姓名" />
+                    <option name="custom" value="false" />
+                    <option name="ext" value="{}" />
+                    <option name="name" value="contactPerson" />
+                    <option name="type" value="java.lang.String" />
+                  </ColumnInfoDTO>
+                  <ColumnInfoDTO>
+                    <option name="comment" value="供应商联系人电话" />
+                    <option name="custom" value="false" />
+                    <option name="ext" value="{}" />
+                    <option name="name" value="contactPhone" />
+                    <option name="type" value="java.lang.String" />
+                  </ColumnInfoDTO>
+                  <ColumnInfoDTO>
+                    <option name="comment" value="供应商备注" />
+                    <option name="custom" value="false" />
+                    <option name="ext" value="{}" />
+                    <option name="name" value="remark" />
+                    <option name="type" value="java.lang.String" />
+                  </ColumnInfoDTO>
+                </list>
+              </option>
+              <option name="name" value="SupplierInfo" />
+              <option name="preName" value="" />
+              <option name="saveModelName" value="pwms" />
+              <option name="savePackageName" value="com.pwms" />
+              <option name="savePath" value="./pwms/src/main/java/com/pwms" />
+              <option name="templateGroupName" value="" />
             </TableInfoDTO>
           </value>
         </entry>
@@ -239,14 +326,14 @@
                     <option name="type" value="java.lang.Integer" />
                   </ColumnInfoDTO>
                   <ColumnInfoDTO>
-                    <option name="comment" value="商家编号，外键，关联商家信息表" />
+                    <option name="comment" value="供应商编号" />
                     <option name="custom" value="false" />
                     <option name="ext" value="{}" />
-                    <option name="name" value="merchantId" />
+                    <option name="name" value="supplierId" />
                     <option name="type" value="java.lang.Integer" />
                   </ColumnInfoDTO>
                   <ColumnInfoDTO>
-                    <option name="comment" value="涂料编号，外键，关联涂料信息表" />
+                    <option name="comment" value="涂料编号" />
                     <option name="custom" value="false" />
                     <option name="ext" value="{}" />
                     <option name="name" value="paintId" />

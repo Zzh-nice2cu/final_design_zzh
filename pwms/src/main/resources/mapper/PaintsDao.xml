@@ -8,14 +8,13 @@
         <result property="brand" column="brand" jdbcType="VARCHAR"/>
         <result property="type" column="type" jdbcType="VARCHAR"/>
         <result property="unit" column="unit" jdbcType="VARCHAR"/>
-        <result property="price" column="price" jdbcType="NUMERIC"/>
         <result property="remark" column="remark" jdbcType="VARCHAR"/>
     </resultMap>
 
     <!--查询单个-->
     <select id="queryById" resultMap="PaintsMap">
         select
-          id, name, brand, type, unit, price, remark
+          id, name, brand, type, unit, remark
         from paints
         where id = #{id}
     </select>
@@ -23,7 +22,7 @@
     <!--查询指定行数据-->
     <select id="queryAllByLimit" resultMap="PaintsMap">
         select
-          id, name, brand, type, unit, price, remark
+          id, name, brand, type, unit, remark
         from paints
         <where>
             <if test="id != null">
@@ -40,9 +39,6 @@
             </if>
             <if test="unit != null and unit != ''">
                 and unit = #{unit}
-            </if>
-            <if test="price != null">
-                and price = #{price}
             </if>
             <if test="remark != null and remark != ''">
                 and remark = #{remark}
@@ -71,9 +67,6 @@
             <if test="unit != null and unit != ''">
                 and unit = #{unit}
             </if>
-            <if test="price != null">
-                and price = #{price}
-            </if>
             <if test="remark != null and remark != ''">
                 and remark = #{remark}
             </if>
@@ -82,30 +75,29 @@
 
     <!--新增所有列-->
     <insert id="insert" keyProperty="id" useGeneratedKeys="true">
-        insert into paints(name, brand, type, unit, price, remark)
-        values (#{name}, #{brand}, #{type}, #{unit}, #{price}, #{remark})
+        insert into paints(name, brand, type, unit, remark)
+        values (#{name}, #{brand}, #{type}, #{unit}, #{remark})
     </insert>
 
     <insert id="insertBatch" keyProperty="id" useGeneratedKeys="true">
-        insert into paints(name, brand, type, unit, price, remark)
+        insert into paints(name, brand, type, unit, remark)
         values
         <foreach collection="entities" item="entity" separator=",">
-        (#{entity.name}, #{entity.brand}, #{entity.type}, #{entity.unit}, #{entity.price}, #{entity.remark})
+        (#{entity.name}, #{entity.brand}, #{entity.type}, #{entity.unit}, #{entity.remark})
         </foreach>
     </insert>
 
     <insert id="insertOrUpdateBatch" keyProperty="id" useGeneratedKeys="true">
-        insert into paints(name, brand, type, unit, price, remark)
+        insert into paints(name, brand, type, unit, remark)
         values
         <foreach collection="entities" item="entity" separator=",">
-            (#{entity.name}, #{entity.brand}, #{entity.type}, #{entity.unit}, #{entity.price}, #{entity.remark})
+            (#{entity.name}, #{entity.brand}, #{entity.type}, #{entity.unit}, #{entity.remark})
         </foreach>
         on duplicate key update
         name = values(name),
         brand = values(brand),
         type = values(type),
         unit = values(unit),
-        price = values(price),
         remark = values(remark)
     </insert>
 
@@ -124,9 +116,6 @@
             </if>
             <if test="unit != null and unit != ''">
                 unit = #{unit},
-            </if>
-            <if test="price != null">
-                price = #{price},
             </if>
             <if test="remark != null and remark != ''">
                 remark = #{remark},

@@ -4,7 +4,7 @@
 
     <resultMap type="com.pwms.entity.SupplyRelations" id="SupplyRelationsMap">
         <result property="id" column="id" jdbcType="INTEGER"/>
-        <result property="merchantId" column="merchant_id" jdbcType="INTEGER"/>
+        <result property="supplierId" column="supplier_id" jdbcType="INTEGER"/>
         <result property="paintId" column="paint_id" jdbcType="INTEGER"/>
         <result property="price" column="price" jdbcType="NUMERIC"/>
         <result property="remark" column="remark" jdbcType="VARCHAR"/>
@@ -13,7 +13,7 @@
     <!--查询单个-->
     <select id="queryById" resultMap="SupplyRelationsMap">
         select
-          id, merchant_id, paint_id, price, remark
+          id, supplier_id, paint_id, price, remark
         from supply_relations
         where id = #{id}
     </select>
@@ -21,14 +21,14 @@
     <!--查询指定行数据-->
     <select id="queryAllByLimit" resultMap="SupplyRelationsMap">
         select
-          id, merchant_id, paint_id, price, remark
+          id, supplier_id, paint_id, price, remark
         from supply_relations
         <where>
             <if test="id != null">
                 and id = #{id}
             </if>
-            <if test="merchantId != null">
-                and merchant_id = #{merchantId}
+            <if test="supplierId != null">
+                and supplier_id = #{supplierId}
             </if>
             <if test="paintId != null">
                 and paint_id = #{paintId}
@@ -51,8 +51,8 @@
             <if test="id != null">
                 and id = #{id}
             </if>
-            <if test="merchantId != null">
-                and merchant_id = #{merchantId}
+            <if test="supplierId != null">
+                and supplier_id = #{supplierId}
             </if>
             <if test="paintId != null">
                 and paint_id = #{paintId}
@@ -68,26 +68,26 @@
 
     <!--新增所有列-->
     <insert id="insert" keyProperty="id" useGeneratedKeys="true">
-        insert into supply_relations(merchant_id, paint_id, price, remark)
-        values (#{merchantId}, #{paintId}, #{price}, #{remark})
+        insert into supply_relations(supplier_id, paint_id, price, remark)
+        values (#{supplierId}, #{paintId}, #{price}, #{remark})
     </insert>
 
     <insert id="insertBatch" keyProperty="id" useGeneratedKeys="true">
-        insert into supply_relations(merchant_id, paint_id, price, remark)
+        insert into supply_relations(supplier_id, paint_id, price, remark)
         values
         <foreach collection="entities" item="entity" separator=",">
-        (#{entity.merchantId}, #{entity.paintId}, #{entity.price}, #{entity.remark})
+        (#{entity.supplierId}, #{entity.paintId}, #{entity.price}, #{entity.remark})
         </foreach>
     </insert>
 
     <insert id="insertOrUpdateBatch" keyProperty="id" useGeneratedKeys="true">
-        insert into supply_relations(merchant_id, paint_id, price, remark)
+        insert into supply_relations(supplier_id, paint_id, price, remark)
         values
         <foreach collection="entities" item="entity" separator=",">
-            (#{entity.merchantId}, #{entity.paintId}, #{entity.price}, #{entity.remark})
+            (#{entity.supplierId}, #{entity.paintId}, #{entity.price}, #{entity.remark})
         </foreach>
         on duplicate key update
-        merchant_id = values(merchant_id),
+        supplier_id = values(supplier_id),
         paint_id = values(paint_id),
         price = values(price),
         remark = values(remark)
@@ -97,8 +97,8 @@
     <update id="update">
         update supply_relations
         <set>
-            <if test="merchantId != null">
-                merchant_id = #{merchantId},
+            <if test="supplierId != null">
+                supplier_id = #{supplierId},
             </if>
             <if test="paintId != null">
                 paint_id = #{paintId},
