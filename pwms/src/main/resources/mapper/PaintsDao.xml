@@ -124,6 +124,10 @@
         where id = #{id}
     </update>
 
+    <select id="pageCC" resultMap="PaintsMap">
+        select * from paints
+    </select>
+
     <!--通过主键删除-->
     <delete id="deleteById">
         delete from paints where id = #{id}
