@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>注册页面</title>
+    <style>
+        .center-box{
+            text-align: center;
+        }
+        body {
+            background-color: #f1f1f1;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        .container {
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+            margin: auto;
+            padding: 20px 50px;
+            width: 500px;
+            margin-top: 100px;
+        }
+        input[type=text], input[type=password] {
+            padding: 12px 20px;
+            margin: 8px 0;
+            box-sizing: border-box;
+            border-radius: 4px;
+            border: none;
+            background-color: #f2f2f2;
+        }
+        input[type=submit] {
+            background-color: #4CAF50;
+            color: white;
+            padding: 14px 20px;
+            margin: 8px 0;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        input[type=submit]:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="center-box">
+        <h2>注册页面</h2>
+        <form action="/merchantsInfo/insert" method="post">
+            <label for="username">账号</label>
+            <input type="text" placeholder="请输入账号" name="username" id="username" required>
+            <br>
+            <label for="password">密码</label>
+            <input type="password" placeholder="请输入密码" name="password" id="password" required>
+            <br>
+            <label for="name">商家名称</label>
+            <input type="text" placeholder="请输入商家名称" name="name" id="name" required>
+            <br>
+            <label for="address">商家地址</label>
+            <input type="text" placeholder="请输入商家地址" name="address" id="address" required>
+            <br>
+            <label for="phone">商家电话</label>
+            <input type="text" placeholder="请输入商家电话" name="phone" id="phone" required>
+            <br>
+            <label for="email">商家邮箱</label>
+            <input type="text" placeholder="请输入商家邮箱" name="email" id="email">
+            <br>
+            <label for="remark">商家备注</label>
+            <input type="text" placeholder="请输入商家备注" name="remark" id="remark">
+            <br>
+            <input type="submit" value="注册">
+        </form>
+    </div>
+</div>
+</body>
+</html>

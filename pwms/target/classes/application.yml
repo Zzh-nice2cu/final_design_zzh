@@ -1,0 +1,34 @@
+server:
+  port: 8089
+
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/pwmsdb?useUnicode=true&characterEncoding=utf-8&useSSL=false&serverTimezone=GMT%2B8
+    username: root
+    password: zzh197385
+  mvc:
+    view:
+      prefix: classpath:/templates/
+      suffix: .html
+
+  web:
+    resources:
+      static-locations: classpath:/static/
+
+  thymeleaf:
+    cache: false
+    prefix: classpath:/templates/
+    suffix: .html
+    encoding: UTF-8
+    mode: HTML
+    servlet:
+      content-type: text/html
+
+
+
+mybatis:
+  # mapper 所在包
+  mapper-locations: classpath*:mapper/*Dao.xml
+  # entity 所在包
+  type-aliases-package: com.pwms.entity

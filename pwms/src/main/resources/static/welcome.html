@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>涂料仓库管理系统</title>
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 80vh;
+      background-image: url("../static/image/index_bg.png");
+      background-size: cover;
+    }
+
+    .container {
+      margin-top: 100px;
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 5rem;
+      font-weight: bold;
+      color: #fff;
+      text-shadow: 3px 3px 3px rgba(0, 0, 0, 0.3);
+      margin-bottom: 50px;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 10px 20px;
+      font-size: 1.5rem;
+      font-weight: bold;
+      background-color: #4CAF50;
+      color: #fff;
+      border-radius: 5px;
+      margin: 10px;
+      text-decoration: none;
+      box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.3);
+      transition: all 0.2s ease-in-out;
+    }
+
+    .btn:hover {
+      background-color: #3e8e41;
+      box-shadow: 6px 6px 6px rgba(0, 0, 0, 0.3);
+      transform: translateY(-2px);
+    }
+
+    .login-btn {
+      border: 2px solid #4CAF50;
+      background-color: transparent;
+      color: #4CAF50;
+    }
+
+    .login-btn:hover {
+      background-color: #4CAF50;
+      color: #fff;
+      border-color: #4CAF50;
+    }
+
+    .register-btn {
+      border: 2px solid #4CAF50;
+      background-color: transparent;
+      color: #4CAF50;
+    }
+
+    .register-btn:hover {
+      background-color: #4CAF50;
+      color: #fff;
+      border-color: #4CAF50;
+    }
+  </style>
+</head>
+
+<body>
+<div class="container">
+  <h1>涂料仓库管理系统</h1>
+  <!-- 这个超链接可以与controller层的url对应 -->
+  <a href="/merchantsInfo" class="btn login-btn">登陆</a>
+  <a href="/merchantsInfo/toregister" class="btn register-btn">注册</a>
+</div>
+</body>
+</html>

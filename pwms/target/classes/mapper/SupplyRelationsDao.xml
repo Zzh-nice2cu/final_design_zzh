@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.pwms.dao.SupplyRelationsDao">
+
+    <resultMap type="com.pwms.entity.SupplyRelations" id="SupplyRelationsMap">
+        <result property="id" column="id" jdbcType="INTEGER"/>
+        <result property="supplierId" column="supplier_id" jdbcType="INTEGER"/>
+        <result property="paintId" column="paint_id" jdbcType="INTEGER"/>
+        <result property="price" column="price" jdbcType="NUMERIC"/>
+        <result property="remark" column="remark" jdbcType="VARCHAR"/>
+    </resultMap>
+
+    <!--查询单个-->
+    <select id="queryById" resultMap="SupplyRelationsMap">
+        select
+          id, supplier_id, paint_id, price, remark
+        from supply_relations
+        where id = #{id}
+    </select>
+
+    <!--查询指定行数据-->
+    <select id="queryAllByLimit" resultMap="SupplyRelationsMap">
+        select
+          id, supplier_id, paint_id, price, remark
+        from supply_relations
+        <where>
+            <if test="id != null">
+                and id = #{id}
+            </if>
+            <if test="supplierId != null">
+                and supplier_id = #{supplierId}
+            </if>
+            <if test="paintId != null">
+                and paint_id = #{paintId}
+            </if>
+            <if test="price != null">
+                and price = #{price}
+            </if>
+            <if test="remark != null and remark != ''">
+                and remark = #{remark}
+            </if>
+        </where>
+        limit #{pageable.offset}, #{pageable.pageSize}
+    </select>
+
+    <!--统计总行数-->
+    <select id="count" resultType="java.lang.Long">
+        select count(1)
+        from supply_relations
+        <where>
+            <if test="id != null">
+                and id = #{id}
+            </if>
+            <if test="supplierId != null">
+                and supplier_id = #{supplierId}
+            </if>
+            <if test="paintId != null">
+                and paint_id = #{paintId}
+            </if>
+            <if test="price != null">
+                and price = #{price}
+            </if>
+            <if test="remark != null and remark != ''">
+                and remark = #{remark}
+            </if>
+        </where>
+    </select>
+
+    <!--新增所有列-->
+    <insert id="insert" keyProperty="id" useGeneratedKeys="true">
+        insert into supply_relations(supplier_id, paint_id, price, remark)
+        values (#{supplierId}, #{paintId}, #{price}, #{remark})
+    </insert>
+
+    <insert id="insertBatch" keyProperty="id" useGeneratedKeys="true">
+        insert into supply_relations(supplier_id, paint_id, price, remark)
+        values
+        <foreach collection="entities" item="entity" separator=",">
+        (#{entity.supplierId}, #{entity.paintId}, #{entity.price}, #{entity.remark})
+        </foreach>
+    </insert>
+
+    <insert id="insertOrUpdateBatch" keyProperty="id" useGeneratedKeys="true">
+        insert into supply_relations(supplier_id, paint_id, price, remark)
+        values
+        <foreach collection="entities" item="entity" separator=",">
+            (#{entity.supplierId}, #{entity.paintId}, #{entity.price}, #{entity.remark})
+        </foreach>
+        on duplicate key update
+        supplier_id = values(supplier_id),
+        paint_id = values(paint_id),
+        price = values(price),
+        remark = values(remark)
+    </insert>
+
+    <!--通过主键修改数据-->
+    <update id="update">
+        update supply_relations
+        <set>
+            <if test="supplierId != null">
+                supplier_id = #{supplierId},
+            </if>
+            <if test="paintId != null">
+                paint_id = #{paintId},
+            </if>
+            <if test="price != null">
+                price = #{price},
+            </if>
+            <if test="remark != null and remark != ''">
+                remark = #{remark},
+            </if>
+        </set>
+        where id = #{id}
+    </update>
+
+    <!--通过主键删除-->
+    <delete id="deleteById">
+        delete from supply_relations where id = #{id}
+    </delete>
+
+</mapper>
+

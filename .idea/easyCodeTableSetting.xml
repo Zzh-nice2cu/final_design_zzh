@@ -308,7 +308,7 @@
               <option name="saveModelName" value="pwms" />
               <option name="savePackageName" value="com.pwms" />
               <option name="savePath" value="./pwms/src/main/java/com/pwms" />
-              <option name="templateGroupName" value="" />
+              <option name="templateGroupName" value="Default" />
             </TableInfoDTO>
           </value>
         </entry>

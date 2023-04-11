@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>登陆页</title>
+  <style>
+    *{
+      padding: 0;
+      margin: 0;
+      text-decoration: none;
+    }
+    body{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background-image: url("../static/image/index_bg.png");
+      background-size: cover;
+    }
+    .button {
+      display: inline-block;
+      background-color: #008080;
+      color: #fff;
+      font-size: 16px;
+      padding: 12px 24px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background-color 0.3s ease-in-out;
+    }
+
+    .button:hover {
+      background-color: #ea8c08;
+      color: #ffffff;
+    }
+    .login{
+      width: 550px;
+      height: 400px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: linear-gradient(
+              to right bottom,
+              rgba(255,255,255,.7),
+              rgba(255,255,255,.5),
+              rgba(255,255,255,.4)
+      );
+      /* 使背景模糊化 */
+      backdrop-filter: blur(10px);
+      box-shadow: 0 0 20px #a29bfe;
+      border-radius: 15px;
+    }
+
+    .table{
+      font: 900 40px '';
+      text-align: center;
+      letter-spacing: 5px;
+      color: #3d3d3d;
+    }
+
+    .box{
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .box input{
+      width: 400px;
+      height: 100%;
+      margin-bottom: 20px;
+      outline: none;
+      border: 0;
+      padding: 10px;
+      background-color: transparent;
+      border-bottom: 3px solid rgb(150, 150, 240);
+      font: 900 16px '';
+    }
+
+    .textCenter {
+      text-align:center;
+    }
+
+    .go{
+      text-align: center;
+      display: block;
+      height: 24px;
+      padding: 12px;
+      font: 900 20px '';
+      border-radius: 10px;
+      margin-top: 20px;
+      color: #fff;
+      letter-spacing: 3px;
+      background-image: linear-gradient(to left,
+      #fd79a8,#a29bf6);
+    }
+  </style>
+</head>
+<body>
+
+  <div class="login">
+    <div class="box">
+      <form action="/merchantsInfo/login" method="post" id="loginForm" name="loginForm">
+        <div class="textCenter">
+          <h2>请登录系统</h2>
+          <br>
+        </div>
+
+        <div th:if="${error}" class="error">
+          <p th:text="${error}"></p>
+        </div>
+
+        <label for="username">用户名</label>
+        <input type="text" placeholder="请输入用户名" name="username" id="username" required>
+        <br>
+        <label for="password">密&nbsp;&nbsp;&nbsp;&nbsp;码</label>
+        <input type="password" placeholder="请输入密码" name="password" id="password" required>
+        <br>
+        <span class="psw"><a href="/merchantsInfo/toregister">没有账号?</a></span>
+        &nbsp;&nbsp;&nbsp;<input type="submit" class="button" value="登陆">
+      </form>
+    </div>
+  </div>
+
+<!--  <script>-->
+<!--    $('#loginForm').submit(function(e) {-->
+<!--      e.preventDefault();-->
+<!--      var formData = $(this).serialize();-->
+<!--      $.ajax({-->
+<!--        url: '/merchantsInfo/login',-->
+<!--        type: 'POST',-->
+<!--        data: formData,-->
+<!--        success: function(data) {-->
+<!--          // 登录成功，跳转到首页-->
+<!--          window.location.href = '/welcome.html';-->
+<!--        },-->
+<!--        error: function(xhr, status, error) {-->
+<!--          // 登录失败，跳转到登录页面并弹出提示框-->
+<!--          window.location.href = 'login.html';-->
+<!--          alert('登录失败：' + xhr.responseText);-->
+<!--        }-->
+<!--      });-->
+<!--    });-->
+<!--  </script>-->
+</body>
+</html>
+
